@@ -2,8 +2,8 @@
 
 class View
 {
-    public static function render($code, $output)
+    public static function render($code, $output, $template = 'template.php')
     {
-        include 'template.php';
+        include dirname(__FILE__) . '/' . $template;
     }
 }

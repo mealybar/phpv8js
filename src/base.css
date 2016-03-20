@@ -6,9 +6,16 @@ html {
 h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, serif;
 }
-pre {
+pre, form {
     background-color: #eee;
     padding: 2em;
+}
+fieldset {
+    border: 0;
+    margin-left: 0;
+}
+input {
+    padding: .5em;
 }
 .back-link {
     float: right;
