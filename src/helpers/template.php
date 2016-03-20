@@ -1,4 +1,4 @@
-<html><html>
+<html>
 <head>
     <title>Extending PHP app using JavaScript</title>
     <link rel="stylesheet" href="./../base.css">

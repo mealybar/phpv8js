@@ -1,26 +1,33 @@
 <?php
 
-ini_set('display_errors', true);
+$v8 = new V8Js('PHPJS');
 
-$v8 = new V8Js();
+$codeTemplate = "PHPJS.output.result = function() { %s
+}();";
 
 $code = <<<EOJS
-(function() {
-    var calc = 2 + 22;
-    return calc;
-}());
+var helloWorld = {
+    oHai : "Hello World",
+    aCalculation : (2 + 2)
+};
+
+return helloWorld;
 EOJS;
 
-$returned = '';
 try {
-    $returned = $v8->executeString($code);
+    $v8->output = new stdClass();
+    $v8->executeString(sprintf($codeTemplate, $code), 'example-1', V8Js::FLAG_FORCE_ARRAY);
+    $returned = $v8->output->result;
+
 }
 catch (V8JsException $e) {
-    $returned = json_encode([
-        'code' => $e->getCode(),
-        'message' => $e->getMessage()
-    ]);
+    $returned = [
+        'error' => [
+            'code' => $e->getCode(),
+            'message' => $e->getMessage()
+        ]
+    ];
 }
 
 require dirname(__FILE__) . '/../helpers/view.php';
-View::render($code, $returned);
+View::render($code, var_export($returned, true));
