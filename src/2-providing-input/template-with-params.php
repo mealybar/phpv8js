@@ -10,7 +10,9 @@
         <h1>Provide Input</h1>
     </header>
     <h2>Code</h2>
-    <pre><?php echo $code; ?></pre>
+    <pre><?php echo $php; ?></pre>
+    <h2>JavaScript</h2>
+    <pre><?php echo $javascript; ?></pre>
     <h2>Params</h2>
     <form method="post">
         <label>Name: <input name="name" type="text"></label>

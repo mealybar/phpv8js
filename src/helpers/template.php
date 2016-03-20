@@ -10,7 +10,9 @@
      <h1>Hello World</h1>
     </header>
     <h2>Code</h2>
-    <pre><?php echo $code; ?></pre>
+    <pre><?php echo $php; ?></pre>
+    <h2>JavaScript</h2>
+    <pre><?php echo $javascript; ?></pre>
     <h2>Result</h2>
     <pre><?php echo $output; ?></pre>
 </main>
