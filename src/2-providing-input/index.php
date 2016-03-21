@@ -32,8 +32,8 @@ catch (V8JsException $e) {
     ];
 }
 
-$phpCode = '
-class Params {
+$phpCode = ''.
+'class Params {
     private $data = [];
 
     public function __construct(array $data) {
@@ -52,8 +52,7 @@ $v8->output = new stdClass();
 $v8->Params = new Params($_POST);
 
 $v8->executeString(sprintf($javascriptWrapper, $javascriptCode));
-return $v8->output->result;
-';
+return $v8->output->result;';
 
 require dirname(__FILE__) . '/../helpers/view.php';
 View::render($phpCode, $javascriptCode, var_export($returned, true), '/../2-providing-input/template-with-params.php');

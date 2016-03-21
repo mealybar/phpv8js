@@ -1,7 +1,10 @@
 <html>
 <head>
     <title>Extending PHP app using JavaScript</title>
-    <link rel="stylesheet" href="./../base.css">
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/highlightjs/default.css">
+    <script src="./../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <main>
@@ -10,9 +13,9 @@
         <h1>Provide Input</h1>
     </header>
     <h2>Code</h2>
-    <pre><?php echo $php; ?></pre>
+    <pre><code class="php"><?php echo $php; ?></code></pre>
     <h2>JavaScript</h2>
-    <pre><?php echo $javascript; ?></pre>
+    <pre><code class="javascript"><?php echo $javascript; ?></code></pre>
     <h2>Params</h2>
     <form method="post">
         <label>Name: <input name="name" type="text"></label>
@@ -20,7 +23,7 @@
         <button type="submit">Submit</button>
     </form>
     <h2>Result</h2>
-    <pre><?php echo $output; ?></pre>
+    <pre><code class="php"><?php echo $output; ?></code></pre>
 </main>
 </body>
 </html>

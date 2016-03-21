@@ -29,14 +29,13 @@ catch (V8JsException $e) {
     ];
 }
 
-$phpCode = '
-$v8 = new V8Js("PHPJS");
+$phpCode = ''.
+'$v8 = new V8Js("PHPJS");
 $javascriptWrapper = "PHPJS.output.result = function() { %s }();";
 $v8->output = new stdClass();
 
 $v8->executeString(sprintf($javascriptWrapper, $javascriptCode));
-return $v8->output->result;
-';
+return $v8->output->result;';
 
 require dirname(__FILE__) . '/../helpers/view.php';
 View::render($phpCode, $javascriptCode, var_export($returned, true));
