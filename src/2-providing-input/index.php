@@ -46,12 +46,15 @@ $phpCode = ''.
 }
 
 $v8 = new V8Js("PHPJS");
-$javascriptWrapper = "PHPJS.output.result = function() { %s }();";
+$javascriptWrapper =
+    "PHPJS.output.result = function() { %s }();";
 $v8->output = new stdClass();
 
 $v8->Params = new Params($_POST);
 
-$v8->executeString(sprintf($javascriptWrapper, $javascriptCode));
+$v8->executeString(
+    sprintf($javascriptWrapper, $javascriptCode)
+);
 return $v8->output->result;';
 
 require dirname(__FILE__) . '/../helpers/view.php';

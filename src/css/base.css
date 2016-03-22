@@ -11,6 +11,11 @@ pre, form {
     margin: 0;
     padding: 1em;
 }
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    word-wrap: break-word;
+}
 fieldset {
     border: 0;
     margin-left: 0;
